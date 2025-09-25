@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Buscar Persona</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <script src="js/validaciones.js"></script>
+    <script>
+        function validarBusqueda() {
+            let dni = document.getElementById("nroDni").value.trim();
+            if(dni === "") {
+                alert("Ingrese el número de documento.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h1>Buscar Persona</h1>
+    <form action="formAccion.php" method="post" onsubmit="return validarBuscarPersona();">
+        <input type="hidden" name="accion" value="buscarPersona">
+
+        <label for="nroDni">Número de Documento:</label>
+        <input type="text" id="nroDni" name="nroDni" maxlength="10">
+
+        <input type="submit" value="Buscar Persona">
+    </form>
+</body>
+</html>
